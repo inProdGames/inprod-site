@@ -1,0 +1,67 @@
+#field {
+	background-color:lightGray;
+	-webkit-box-shadow:0px 0px 8px 4px lightGray;
+	   -moz-box-shadow:0px 0px 8px 4px lightGray;
+	        box-shadow:0px 0px 8px 4px lightGray;
+	
+	position:fixed;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+#cubeArea {
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	height:48%;
+	
+	background-color:rgba(0,255,0,0.1);
+	border-bottom-style:solid;
+	border-bottom-width:3px;
+	border-bottom-color:rgba(0,255,0,0.7);
+	
+	visibility:hidden;
+}
+
+.flyer {
+	position:absolute;
+	
+/*	background-image:url(flyer.png);*/
+}
+
+.cube {
+	position:absolute;
+	
+/*	transition-property:left,top;
+	transition-duration:0.25s,0.25s;
+	transition-timing-function:linear,linear;*/
+	/* Gecko (FF, SeaMonkey) */
+/*	-moz-transition-property:left,top;
+	-moz-transition-duration:0.25s,0.25s;
+	-moz-transition-timing-function:linear,linear;*/
+	/* Presto (Opera) */
+/*	-o-transition-property:left,top;
+	-o-transition-duration:0.25s,0.25s;
+	-o-transition-timing-function:linear,linear;*/
+	/* WebKit (Safari, Chrome) */
+/*	-webkit-transition-property:left,top;
+	-webkit-transition-duration:0.25s,0.25s;
+	-webkit-transition-timing-function:linear,linear;*/
+	/* QQ, no CSS3 transitions in Trident/IE */
+	
+	/* maybe add: */
+	-webkit-box-shadow:4px 6px 8px 0px rgba(0,0,0,0.2);
+	   -moz-box-shadow:4px 6px 8px 0px rgba(0,0,0,0.2);
+	        box-shadow:4px 6px 8px 0px rgba(0,0,0,0.2);
+}
+.cubeColor0 {
+	background-color:red;
+}
+.cubeColor1 {
+	background-color:orange;
+}
+.cubeColor2 {
+	background-color:yellow;
+}

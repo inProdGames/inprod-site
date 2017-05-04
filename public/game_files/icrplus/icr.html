@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Inverse Cube Runner Plus</title>
+		<script type="text/javascript" src="game.js"></script>
+		<script type="text/javascript" src="objects.js"></script>
+		<script type="text/javascript" src="util.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" type="text/css" href="themes/default.css"/>
+	</head>
+	<!-- Dedicated to Abby, Dennis, Evan, Guido, James, Laura, Natanael, Talia, and all the other awesome people I met at Dreams Punta Cana, December 2010. -->
+	<body onLoad="init();">
+		<img id="imgLoader"/>
+		<div id="menu">
+			<div id="settings">
+				<table cellpadding="16px;">
+					<tr>
+						<th colspan="3" style="font-size:14pt; padding:0px;">
+							Options
+						</th>
+					</tr>
+					<tr style="vertical-align:top;">
+						<td>
+							&nbsp;
+							<b>Cheats</b>
+							<br/>
+							<label for="cheats_godMode" title="Disable death.">
+								<input type="checkbox" name="godmode" id="cheats_godMode" onchange="godMode = checked;"/>
+								God Mode
+							</label>
+							<br/>
+							<label for="cheats_customSpeed" title="Use up and down to change the speed.">
+								<input type="checkbox" name="customspeed" id="cheats_customSpeed" onchange="customSpeed = checked;"/>
+								Custom Speed
+							</label>
+							<br/>
+							<label for="cheats_debugMode" title="Display debug information and hitboxes.">
+								<input type="checkbox" name="debugmode" id="cheats_debugMode" onchange="debugMode = checked; if (checked) {document.getElementById('debug').style.visibility = 'visible';} else {document.getElementById('debug').style.visibility = 'hidden';}"/>
+								Debug Mode
+							</label>
+							<br/>
+							<br/>
+							&nbsp;
+							<b>Theme</b>
+							<br/>
+							<span style="font-size:0pt;">&nbsp;</span>
+							<select id="themeSelect" onchange="loadTheme(value);">
+								<option value="classic">Classic</option>
+								<option value="frog">Frog</option>
+								<option value="grid">Grid</option>
+								<option value="tris">Tris</option>
+								<option value="winter" selected>Winter</option>
+							</select>
+						</td>
+						<td style="min-width:132px;">
+							&nbsp;
+							<b>Speed</b>
+							<br/>
+							<label for="speed_easy" onclick="gameSpeed = 3; if (debugMode) {document.getElementById('debugGameSpeed').innerHTML = '3';}">
+								<input type="radio" name="speed" value="easy" id="speed_easy" checked/>
+								Slow
+							</label>
+							<br/>
+							<label for="speed_med" onclick="gameSpeed = 5; if (debugMode) {document.getElementById('debugGameSpeed').innerHTML = '5';}">
+								<input type="radio" name="speed" value="med" id="speed_med"/>
+								Medium
+							</label>
+							<br/>
+							<label for="speed_difficult" onclick="gameSpeed = 7; if (debugMode) {document.getElementById('debugGameSpeed').innerHTML = '8';}">
+								<input type="radio" name="speed" value="difficult" id="speed_difficult"/>
+								Fast
+							</label>
+							<br/>
+							<label for="speed_impossible" onclick="gameSpeed = 40; if (debugMode) {document.getElementById('debugGameSpeed').innerHTML = '40';}">
+								<input type="radio" name="speed" value="impossible" id="speed_impossible"/>
+								Impossible
+							</label>
+						</td>
+						<td>
+							&nbsp;
+							<b>Mode</b>
+							<br/>
+							<label for="mode_1p_inv" onclick="mode = 1;" title="The player places cubes; the computer controls the flyer.">
+								<input type="radio" name="mode" value="1pinv" id="mode_1p_inv" disabled/>
+								1 Player, inverted
+							</label>
+							<br/>
+							<label for="mode_1p_norm" onclick="mode = 0;" title="Cubes spawn randomly; the player controls the flyer.">
+								<input type="radio" name="mode" value="1pnorm" id="mode_1p_norm" checked/>
+								1 Player, original
+							</label>
+							<br/>
+							<label for="mode_2p" onclick="mode = 2;" title="One player places cubes; the other player controls the flyer.">
+								<input type="radio" name="mode" value="2p" id="mode_2p"/>
+								2 Player
+							</label>
+						</td>
+					</tr>
+				</table>
+				<button onclick="start(0);" class="bigBtn"  style="position:relative; top:-32px;">
+					Start
+				</button>
+			</div>
+			<div id="instructions">
+				<div style="font-size:14pt; font-weight:bold; text-align:center; margin-bottom:8px;">How To Play</div>
+				<b>1P normal or 2P:</b> When controlling the flyer your goal is to avoid the cubes for as long as possible.
+				<script type="text/javascript">
+					if ((window.innerHeight > 640 && window.innerWidth > 520) || (window.innerHeight > 480 && window.innerWidth > 950)) {
+						document.write("<br/>" +
+							"<br/>" +
+							"<table>" +
+								"<tr>" +
+									"<th colspan=\"3\">" +
+										"Flyer Controls" +
+									"</th>" +
+								"</tr>" +
+								"<tr>" +
+									"<th>" +
+										"<img src=\"imgs/menu/qwerty_keys.png\" alt=\"Use A and D to move left and right.\" title=\"On a QWERTY keyboard, use A and D to move left and right.\"/>" +
+									"</th>" +
+									"<th>" +
+										"<img src=\"imgs/menu/dvorak_keys.png\" alt=\"Use A and E to move left and right.\" title=\"On a Dvorak keyboard, use A and E to move left and right.\"/>" +
+									"</th>" +
+									"<th>" +
+										"<img src=\"imgs/menu/arrow_keys.png\" alt=\"Use the arrow keys to move left and right.\" title=\"Use the arrow keys to move left and right.\"/>" +
+									"</th>" +
+								"</tr>" +
+							"</table>"); 
+							
+					} else {
+						document.write("Use A and D, A and E, or the arrow keys to move the flyer.");
+					}
+				</script>
+				<br/>
+				<br/>
+				<b>1P inverted or 2P:</b> When controlling the cubes, click anywhere in the top half of the screen to place a cube.  If you place too many, your old cubes will start to disappear.
+				
+			</div>
+		</div>
+		<div id="debug">
+			gameSpeed = <span id="debugGameSpeed">3</span>px per frame
+			<br/>
+			fieldWidth = <span id="debugFieldWidth">640</span>px
+			<br/>
+			fieldHeight = <span id="debugFieldHeight">480</span>px
+			<br/>
+			cubeSize = <span id="debugCubeSize">48</span>px
+			<br/>
+			maxCubes = <span id="debugMaxCubes">10</span>
+		</div>
+		<div id="titlePg">
+			<div id="title">
+				&nbsp;
+				Inverse
+				<br/>
+				<span style="font-size:56px; line-height:110%;">Cube Runner</span>
+				<br/>
+				<div style="color:#FFCC55; text-shadow:0px 0px 12px orange; text-align:center; line-height:180%;">Plus</div>
+			</div>
+			<br/>
+			<br/>
+			<button onclick="document.getElementById('titlePg').style.left = '-100%'; document.getElementById('titlePg').style.opacity = '0';" class="bigBtn">
+				Play
+			</button>
+			<div id="copyright">
+				<a href="http://inprod.net/games/icrplus/index.html" target="_blank"><img src="imgs/inprod_logo.gif" alt="Inverted Productions" style="-webkit-box-shadow:0px 0px 8px 0px gray;"/></a>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				Version 0.6&#946;
+				<br/>
+				&copy;2010-2011 by Inverted Productions
+			</div>
+		</div>
+		<div id="loadingBox" style="position:fixed; left:0px; top:0px; right:0px; bottom:0px; background-color:black; color:lime; font-size:28pt; text-align:center;">
+			<div style="position:absolute; left:0px; right:0px; bottom:50%;">
+				Loading...
+			</div>
+		</div>
+		
+		<div id="field" style="top:-120%;">
+			<div id="cubeArea"></div>
+		</div>
+		
+		
+		<!-- warnings for old browsers -->
+		<!-- warning for IEs -->
+		<div id="ieWarning" style="position:fixed; left:0px; top:0px; right:0px; bottom:0px; padding-left:48px; padding-right:48px; background-color:black; color:lime; font-size:14pt; visibility:hidden; text-align:center;">
+			<h1>Warning</h1>
+			<p>
+				You are using Internet Explorer* version 8 or lower.  This game is designed to run in modern browsers with modern JavaScript engines.  To have the best experience, we recommend you upgrade to <a href="http://beautyoftheweb.com">Internet Explorer 9</a> or install the <a href="http://google.com/chromeframe">Chrome Frame</a> plug-in.
+			</p>
+			<p>
+				<a href="#" onclick="document.getElementById('ieWarning').style.visibility = 'hidden';">Click here to continue anyway</a>
+			</p>
+			<br/>
+			<br/>
+			<p style="font-size:10pt; text-align:left;">
+				*or another Trident-based browser
+			</p>
+		</div>
+		
+		<!-- warning for old Gecko -->
+		<div id="geckoWarning" style="position:fixed; left:0px; top:0px; right:0px; bottom:0px; padding-left:48px; padding-right:48px; background-color:black; color:lime; font-size:14pt; visibility:hidden; text-align:center;">
+			<h1>Warning</h1>
+			<p>
+				You are using an outdated version of Firefox*.  To have the best experience, we recommend you upgrade to <a href="http://mozilla.com/firefox">Firefox 3.6</a>.
+			</p>
+			<p>
+				<a href="#" onclick="document.getElementById('geckoWarning').style.visibility = 'hidden';">Click here to continue anyway</a>
+			</p>
+			<br/>
+			<br/>
+			<p style="font-size:10pt; text-align:left;">
+				*or another Gecko-based browser
+			</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+/* tags */
+
+a:link {
+	color:#0aff0f;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a:visited {
+	color:#0aff0f;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a:hover {
+	color:#00ffa0;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a:active {
+	color:#00d050;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a.biglink:link {
+	color:#00ff50;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a.biglink:visited {
+	color:#00ff50;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a.biglink:hover {
+	color:#00ffa0;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+a.biglink:active {
+	color:#00d050;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+body {
+	background-color:#000000;
+	color:#00ff00;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	}
+
+img {
+	border:0;
+	}
+
+p {
+	color:#0aff0f;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	}
+
+/* classes */
+
+.fakelink {
+	color:#0aff0f;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:normal;
+	text-decoration:underline;
+	}
+
+.fakebiglink {
+	color:#00ff50;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:underline;
+}
+
+.head {
+	color:#00ff00;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:12.5pt;
+	font-weight:bold;
+	}
+
+.subhead {
+	color:#00ff0a;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:11pt;
+	font-weight:bold;
+	}
+
+.smallhead {
+	color:#00ff0f;
+	font-family:Lucida Console, Courier New, OCR-A II, OCR-A Extended;
+	font-size:10pt;
+	font-weight:bold;
+	}

@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* fonts */
+@font-face {
+	font-family:"Star Down";
+	src:local("Star Down"), local('star_down.ttf'), url('star_down.ttf');
+}
+
+body {
+	color:lime;
+	font-family:Consolas, "Lucida Console", Mono, monospace;
+	font-size:12pt;
+	
+	padding:0px;
+	overflow:hidden;
+}
+a {
+	color:cyan;
+}
+a:visited {
+	color:cyan;
+}
+a:active {
+	color:yellow;
+}
+
+img {
+	border-style:none;
+	border-width:0px;
+}
+
+#titlePg {
+	background-color:black;
+	
+	position:fixed;
+	left:0%;
+	top:0%;
+	width:100%;
+	height:100%;
+	
+	text-align:center;
+	
+	/* WebKit (Safari, Chrome) */
+	-webkit-transition-property:left,opacity;
+	-webkit-transition-duration:0.8s,0.4s;
+	-webkit-transition-timing-function:linear,linear;
+	/* Gecko (FF, SeaMonkey) */
+	-moz-transition-property:left,opacity;
+	-moz-transition-duration:0.8s,0.4s;
+	-moz-transition-timing-function:linear,linear;
+	/* Presto (Opera) */
+	-o-transition-property:left,opacity;
+	-o-transition-duration:0.8s,0.4s;
+	-o-transition-timing-function:linear,linear;
+	/* QQ, no CSS3 transitions in Trident/IE */
+	transition-property:left,opacity;
+	transition-duration:0.8s,0.4s;
+	transition-timing-function:linear,linear;
+}
+#title {
+	display:inline-block;
+	text-align:left;
+	
+	margin-top:48px;
+	
+	color:#AAFFAA;
+	text-shadow:0px 0px 12px green;
+	font-family:"Star Down";
+	font-size:28pt;
+}
+#copyright {
+	position:absolute;
+	bottom:1px;
+	left:0px;
+	right:0px;
+	
+	font-size:6pt;
+}
+
+#menu {
+	background-color:black;
+	
+	position:fixed;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	
+	padding:16px;
+	
+	text-align:center;
+	vertical-align:top;
+}
+#menu table {
+	width:100%;
+	
+	vertical-align:top;
+}
+#settings {
+	position:absolute;
+	left:16px;
+	right:16px;
+	top:16px;
+}
+#settings table tr td {
+	text-align:left;
+}
+
+#instructions {
+	position:absolute;
+	left:32px;
+	right:32px;
+	bottom:16px;
+	
+	text-align:left;
+}
+#instructions table {
+	text-align:center;
+}
+
+#debug {
+	font-size:10pt;
+	text-shadow:0px 0px 6px black;
+	
+	position:absolute;
+	left:2px;
+	bottom:2px;
+	
+	visibility:hidden;
+	z-index:100;
+}
+
+.bigBtn {
+	font-size:24pt;
+	padding:8px 16px;
+	
+	background-color:black;
+	color:lime;
+	border-color:lime;
+	-webkit-border-radius:4px;
+	   -moz-border-radius:4px;
+	        border-radius:4px;
+}
+.bigBtn:active {
+	background-color:lime;
+	color:black;
+	
+}

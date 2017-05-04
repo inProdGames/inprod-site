@@ -1,0 +1,35 @@
+	</head>
+	<body>
+		<div class="logo">
+			<img src="/public/images/logos/rounded_inprod_logo.png" style="border:0;" alt="Inverted Productions"/>
+			<p class="tagline">
+				Turning your gaming world upside-down
+			</p>
+		</div>
+		<header id="header">
+			<h1>
+				Oops :(
+			</h1>
+		</header>
+		<nav class="navbar">
+			<a href="/"        style="text-decoration:none;"><div class="navbtn" id="homebtn">Home</div></a>
+			<a href="/news"   style="text-decoration:none;"><div class="navbtn" id="newsbtn">News</div></a>
+			<a href="/games"  style="text-decoration:none;"><div class="navbtn" id="gamesbtn">Games</div></a>
+			<a href="/people" style="text-decoration:none;"><div class="navbtn" id="peoplebtn">People</div></a>
+		</nav>
+		<div id="main">
+			{% if game %}
+				<p>Sorry, we could not find that page, but here is a game instead.  Whenever you finish, you can <a href="/games/{{ game.id }}">visit its page</a> or <a href="/">go back to the inProd home page</a>.</p>
+				<br />
+				<center>
+					{{ game.embedCode }}
+				</center>
+			{% else %}
+				<p>Sorry, we could not find that page.  Please check to be sure you entered the URL correctly, or <a href="/">go back to the inProd home page</a>.</p>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+			{% endif %}

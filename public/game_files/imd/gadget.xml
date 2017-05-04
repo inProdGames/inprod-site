@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="Legitimate Tower Defense" height="360">
+		<Require feature="wave"/>
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[
+			<embed src="http://inprod.net/games/imd/inv_missile_def.swf" height="360px" width="640px" wmode="tranparent"/>
+		]]> 
+	</Content>
+</Module>

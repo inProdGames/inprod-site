@@ -1,0 +1,87 @@
+#field {
+	background-color:#0F0F0F;
+	background-image:url(bg.gif);
+	
+	position:fixed;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+#cubeArea {
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	height:48%;
+	
+	background-image:url(bg_red.gif);
+	background-position:-3px -3px;
+	border-style:solid;
+	border-width:3px;
+	border-color:rgba(255,110,0,0.7);
+	
+	visibility:hidden;
+}
+
+.flyer {
+	position:absolute;
+	
+/*	background-image:url(flyer.png);*/
+}
+
+.cube {
+	position:absolute;
+	
+/*	transition-property:left,top;
+	transition-duration:0.25s,0.25s;
+	transition-timing-function:linear,linear;*/
+	/* Gecko (FF, SeaMonkey) */
+/*	-moz-transition-property:left,top;
+	-moz-transition-duration:0.25s,0.25s;
+	-moz-transition-timing-function:linear,linear;*/
+	/* Presto (Opera) */
+/*	-o-transition-property:left,top;
+	-o-transition-duration:0.25s,0.25s;
+	-o-transition-timing-function:linear,linear;*/
+	/* WebKit (Safari, Chrome) */
+/*	-webkit-transition-property:left,top;
+	-webkit-transition-duration:0.25s,0.25s;
+	-webkit-transition-timing-function:linear,linear;*/
+	/* QQ, no CSS3 transitions in Trident/IE */
+	
+	/* maybe add: */
+	-webkit-box-shadow:2px 3px 3px 0px rgba(48,16,0,0.5);
+	   -moz-box-shadow:2px 3px 3px 0px rgba(48,16,0,0.5);
+	        box-shadow:2px 3px 3px 0px rgba(48,16,0,0.5);
+}
+.cubeColor0 {
+	background-color:#353535;
+	border-top-style:solid;
+	border-top-width:2px;
+	border-top-color:red;
+	border-left-style:solid;
+	border-left-width:1.5px;
+	border-left-color:red;
+}
+.cubeColor1 {
+	background-color:#2B2B2B;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:#FF6600;
+	border-left-style:solid;
+	border-left-width:2px;
+	border-left-color:#FF6600;
+	border-right-style:solid;
+	border-right-width:1.5px;
+	border-right-color:#FF6600;
+}
+.cubeColor2 {
+	background-color:#2E2E2E;
+	border-right-style:solid;
+	border-right-width:2px;
+	border-right-color:#FFBB00;
+	border-bottom-style:solid;
+	border-bottom-width:2px;
+	border-bottom-color:#FFBB00;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="Legitimate Tower Defense" height="440">
+		<Require feature="wave"/>
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[
+			<script type="text/javascript">
+				function init() {
+					gadgets.window.adjustWidth();
+				}
+				gadgets.util.registerOnLoadHandler(init);
+			</script>
+			<embed src="http://inprod.webs.com/games/ltd/ltd.swf" height="440px" width="320px" wmode="tranparent"/>
+		]]> 
+	</Content>
+</Module>

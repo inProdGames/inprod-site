@@ -1,0 +1,194 @@
+		<style type="text/css">
+			a.gamesLink {
+				color:Black;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:26pt;
+				font-weight:Bold;
+			}
+			a.gamesLink:link {
+				color:Black;
+				text-decoration:none;
+			}
+			a.gamesLink:visited {
+				color:Black;
+				text-decoration:none;
+			}
+			a.gamesLink:hover {
+				color:Black;
+				text-decoration:underline;
+			}
+			a.gamesLink:active {
+				color:#444444;
+				text-decoration:underline;
+			}
+			
+			a.gamesLinkSmall {
+				color:Black;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14pt;
+			}
+			a.gamesLinkSmall:link {
+				color:Black;
+				text-decoration:none;
+			}
+			a.gamesLinkSmall:visited {
+				color:Black;
+				text-decoration:none;
+			}
+			a.gamesLinkSmall:hover {
+				color:Black;
+				text-decoration:underline;
+			}
+			a.gamesLinkSmall:active {
+				color:#444444;
+				text-decoration:underline;
+			}
+			
+			.featuredGameImg {
+				display:block;
+				
+				position:absolute;
+				
+				-webkit-border-radius:18px;
+				   -moz-border-radius:18px;
+				        border-radius:18px;
+				
+				background-repeat:repeat-x;
+				
+				-webkit-transition-property:background-position;
+				   -moz-transition-property:background-position;
+				    -ms-transition-property:background-position;
+				     -o-transition-property:background-position;
+				        transition-property:background-position;
+				-webkit-transition-duration:0.75s;
+				   -moz-transition-duration:0.75s;
+				    -ms-transition-duration:0.75s;
+				     -o-transition-duration:0.75s;
+				        transition-duration:0.75s;
+			}
+			.featuredGameImg img {
+				-webkit-border-radius:18px;
+				   -moz-border-radius:18px;
+				        border-radius:18px;
+			}
+		</style>
+		<script type="text/javascript">
+			function FeaturedGameImg(id, x, y, w, h, segments) {
+				this.elem = document.getElementById(id + "Img");
+				this.elem.innerHTML = "&nbsp;";
+				this.elem.className = "featuredGameImg";
+				this.elem.style.left = x + "px";
+				this.elem.style.top = y + "px";
+				this.elem.style.width = w + "px";
+				this.elem.style.height = h + "px";
+				this.elem.style.backgroundImage = "url(/public/images/games/thumbstrips/" + id + ".png)";
+				this.elem.style.backgroundPosition = "0px 0px";
+				
+				this.segs = segments;
+				this.segWidth = w;
+				this.currentSeg = 0;
+				
+			}
+			function scrollGameImgs() {
+				for (var i = 0; i < featuredGamesImgs.length; i++) {
+					//featuredGamesImgs[i].elem.style.backgroundPositionX = (-featuredGamesImgs[i].currentSeg * featuredGamesImgs[i].segWidth) + "px";
+					featuredGamesImgs[i].elem.style.backgroundPosition = (-featuredGamesImgs[i].currentSeg * featuredGamesImgs[i].segWidth) + "px 0px";
+					if (++featuredGamesImgs[i].currentSeg >= featuredGamesImgs[i].segs) {
+						featuredGamesImgs[i].currentSeg = 0;
+					}
+				}
+			}
+			var featuredGamesImgs = [];
+		</script>
+	</head>
+	<body>
+<!--    	<div style='transform:rotate(180deg); -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2); -ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; position:absolute; top:0; left:0; right:0; bottom:0; overflow:auto;'> -->
+		<div class="logo">
+			<img src="/public/images/logos/rounded_inprod_logo.png" style="border:0;" alt="Inverted Productions"/><span class="tm">&trade;</span>
+			<p style="font-size:11pt; font-weight:normal; margin-left:2px; text-align:left;">
+				Welcome to the home of Inverted Productions.  We make video games that offer a completely new gaming experience or a new perspective on existing games or game styles.
+			</p>
+			<div style="text-align:center">
+				<!-- RSS icon -->
+				<a href="/public/rss.xml" target="_blank"><img src="/public/images/icons/rss_med.png" style="text-decoration:none; border-style:none; vertical-align:center;" alt="RSS"/></a>
+				<!-- Wave icon -->
+				<!--<a href="https://wave.google.com/wave/waveref/googlewave.com/w+DxrvGGrhA" target="_blank"><img src="/public/images/icons/wave_med.png" style="text-decoration:none; border-style:none;" alt="\/\/"/></a>-->
+				<!-- Google Buzz icon -->
+				<!--<a href="https://profiles.google.com/inprodgames/buzz" target="_blank"><img src="imgs/buzz_icon_med.png" style="text-decoration:none; border-style:none;" alt=""/></a>-->
+				<!-- Google+ icon -->
+				<a href="https://plus.google.com/117553032782875379546?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="" style="border:0;width:28px;height:28px;"/></a>
+				<!-- Facebook page -->
+				<a href="http://www.facebook.com/pages/Inverted-Productions/115574418462785" target="_blank"><img src="/public/images/icons/fb_med.png" style="text-decoration:none; border-style:none; vertical-align:center;" alt="FB"/></a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+			<p style="font-size:8pt; margin-left:5px; text-align:left;">
+				Content on this site requires the latest versions of Adobe Flash Player and Java.  Click <a href="http://get.adobe.com/flashplayer/?promoid=BUIGP" style="font-size:8pt;" target="_blank" alt="Update Adobe Flash Player">here</a> to get Flash Player 10 and click <a href="http://www.java.com/en/download/installed.jsp?detect=jre&try=1" style="font-size:8pt;" target="_blank" alt="">here</a> to update Java.
+			</p>
+		</div>
+		<header id="header">
+			<p style="font-size:20pt; font-weight:bold; text-align:left; position:relative; top:20px; left:96px;">
+				Turning your gaming world upside-down
+			</p>
+		</header>
+		<nav class="navbar">
+			<a href=""        style="text-decoration:none;"><div class="navbtnCurrentPg" id="homebtn">Home</div></a>
+			<a href="/news"   style="text-decoration:none;"><div class="navbtn"          id="newsbtn">News</div></a>
+			<a href="/games"  style="text-decoration:none;"><div class="navbtn"          id="gamesbtn">Games</div></a>
+			<a href="/people" style="text-decoration:none;"><div class="navbtn"          id="peoplebtn">People</div></a>
+		</nav>
+		<div id="main">
+			<!-- featured games -->
+			<div style="position:relative; top:-16; left:48px; width:600px; height:500px;">
+				<!-- 7h3 f457 64m3 -->
+				<a href="games/fastgame/index.html" class="featuredGameImg" id="fastgameImg">
+					<img src="/public/images/games/thumbs/fastgame_small.png" alt="" />
+				</a>
+				<a href="games/fastgame/index.html" class="gamesLink" style="position:absolute; left:139px; top:30px; text-align:left;">
+					The Fast Game
+				</a>
+				<a href="games/fastgame/index.html" class="gamesLinkSmall" style="position:absolute; left:140px; top:75px; text-align:left;">
+					An early preview with some tricky puzzle solving
+				</a>
+				<!-- inv3r53 cu83 runn3r p1u5 -->
+				<!--<a href="/games/icrplus/index.html" id="icrplusImg">
+					<img src="/public/images/games/thumbs/icrplus_small.png" alt="" />
+				</a>
+				<a href="/games/icrplus/index.html" class="gamesLink" style="position:absolute; left:139px; top:25px; text-align:left;">
+					Inverse Cube Runner Plus
+				</a>
+				<a href="/games/icrplus/index.html" class="gamesLinkSmall" style="position:absolute; left:140px; top:70px; text-align:left;">
+					Play <i>Cube Runner</i> from the opposite perspective
+				</a>-->
+				
+				<!-- inv3r53 mi55i13 d3f3n53 -->
+				<a href="/games/imd/index.html" class="featuredGameImg" id="imdImg">
+					<img src="/public/images/games/thumbs/imd_small.png" alt="" style="position:absolute;left:0px;top:10px;" />
+				</a>
+				<a href="/games/imd/index.html" class="gamesLink" style="position:absolute; left:15px; top:170px; text-align:right;">
+					Inverse Missile Defense
+				</a>
+				<a href="/games/imd/index.html" class="gamesLinkSmall" style="position:absolute; left:142px; top:215px; text-align:right;">
+					Play <i>Missile Command</i> from the<br/>
+					opposite perspective
+				</a>
+				
+				<!-- 17d -->
+				<a href="/games/ltd/index.html" class="featuredGameImg" id="ltdImg">
+					<img src="/public/images/games/slideshows/ltd.gif" alt="" />
+				</a>
+				<a href="/games/ltd/index.html" class="gamesLink" style="position:absolute; left:155px; top:329px; text-align:left;">
+					Legitimate Tower Defense
+				</a>
+				<a href="/games/ltd/index.html" class="gamesLinkSmall" style="position:absolute; left:156px; top:374px; text-align:left;">
+					Play tower defense from a new perspective
+				</a>
+				<script type="text/javascript">
+					featuredGamesImgs.push(new FeaturedGameImg("fastgame", 0, 24, 128, 128, 3));
+					//featuredGamesImgs.push(new FeaturedGameImg("icrplus", 0, 24, 128, 88, 3));
+					featuredGamesImgs.push(new FeaturedGameImg("imd", 415, 173, 171, 96, 2));
+					featuredGamesImgs.push(new FeaturedGameImg("ltd", 24, 320, 123, 174, 3));
+					var featuredGameImgsScrollInterval = setInterval(scrollGameImgs, 5000);
+				</script>
+			</div>
+			<br/>
+			<br/>

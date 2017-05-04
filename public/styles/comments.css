@@ -1,0 +1,17 @@
+#comments {
+	font-size:11pt;
+}
+
+.waveblip {
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:lightGrey;
+	
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.wavethread {
+	margin-left:24px;
+}
+

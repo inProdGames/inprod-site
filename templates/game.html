@@ -1,0 +1,171 @@
+	</head>
+	<body>
+		<div class="logo">
+			<img src="/public/images/logos/rounded_inprod_logo.png" style="border:0;" alt="Inverted Productions"/>
+			<p class="tagline">
+				Turning your gaming world upside-down
+			</p>
+		</div>
+		<header id="header">
+			<h1>
+				{{ title }}
+			</h1>
+		</header>
+		<nav class="navbar">
+			<a href="/"       style="text-decoration:none;"><div class="navbtn"          id="homebtn">Home</div></a>
+			<a href="/news"   style="text-decoration:none;"><div class="navbtn"          id="newsbtn">News</div></a>
+			<a href="/games"  style="text-decoration:none;"><div class="navbtnCurrentPg" id="gamesbtn">Games</div></a>
+			<a href="/people" style="text-decoration:none;"><div class="navbtn"          id="peoplebtn">People</div></a>
+		</nav>
+		<div id="main">
+			<nav class="smalltext">
+				<a href="/" class="smalltext">Inverted Productions</a> &gt; <a href="/games" class="smalltext">Productions</a> &gt; <b>{{ title }}</b>
+			</nav>
+			<br/>
+			<p>
+				{{ description }}
+			</p>
+			<center>
+				<img src="/public/images/games/thumbs/{{ id }}.png" style="display:none;" alt="{{ title }}" />
+				{{ embedCode|safe }}
+				{% if releaseDate %}
+					<br />
+					Release date: {{ releaseDate }}
+				{% endif %}
+				{% if version %}
+					<br />
+					Current version: {{ version }}
+				{% endif %}
+				{% if status %}
+					<br />
+					Status: {{ status }}
+				{% endif %}
+			</center>
+			<br/>
+			<br/>
+			{{ credits }}
+			<br/>
+			<br/>
+			{% if changelog %}
+			<!-- updates
+				{{ changelog }}
+			-->
+			{% endif %}
+			<table class="share" cellpadding="8">
+				<tr>
+					<!--<td>
+						<!-- Buzz ->
+						<a title="Post to Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="normal-count" data-url="http://inprod.net/games/{{ id }}" data-imageurl="http://inprod.net/games/{{ id }}/thumb.png"></a>
+					</td>-->
+					<td>
+						<!-- +1 -->
+						<div class="g-plusone" data-size="tall" data-href="http://inprod.net/games/{{ id }}"></div>
+					</td>
+					<td>
+						<!-- FB like -->
+						<div class="fb-like" data-href="http://inprod.net/games/{{ id }}" data-send="false" data-layout="box_count" data-show-faces="false"></div>
+					</td>
+					<td>
+						<!-- Tweet -->
+						<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://inprod.net/games/{{ id }}" data-text="Check out {{ title }}!" data-count="vertical">Tweet</a>
+						
+					</td>
+					<td>
+						<!-- reddit -->
+						<script type="text/javascript">
+							var reddit_url = "http://inprod.net/games/{{ id }}";
+							var reddit_title = "{{ title }}";
+						</script>
+						<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
+					</td>
+					<td>
+						<!-- Digg -->
+						<a class="DiggThisButton DiggMedium" href="http://digg.com/submit?url=http%3A%2F%2Finprod.net%2Fgames%2Ftpg&amp;title=The%20Two-Player%20Game" rev="game, playable_web_games">
+						</a>
+					</td>
+					<td>
+						<!-- StumbleUpon -->
+						<su:badge layout="5" location="http://inprod.net/games/{{ id }}"></su:badge>
+					</td>
+					<td>
+						<!-- Pinterest -->
+						<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Finprod.net%2Fgames%2Ftpg&media=http%3A%2F%2Finprod.net%2Fgames%2Ftpg%2Fthumb.png&description=Check%20out%20the%20Two-Player%20Game!" class="pin-it-button" count-layout="vertical"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+					</td>
+					<!--<td>
+						<!-- WaveThis ->
+						<a name="wavethis_link" href="https://wave.google.com/wave/wavethis?t={{ title }}&amp;u=http%3A%2F%2Finprod.net%2Fgames%2F{{ id }}&amp;g=http%3A%2F%2Finprod.net%2Fpublic%2Fgadgets%2F{{ id }}.xml" target="_blank"><img src="http://wave.google.com/wavethis/button32.png" /></a>
+					</td>-->
+					<td class="feedback">
+						<a href="mailto:feedback+{{ id }}@inprod.net">Send feedback</a>
+					</td>
+				</tr>
+			</table>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				<!--
+			    // config vars
+				var disqus_shortname = "inprod"; // required: replace example with your forum shortname
+				var disqus_identifier = "inprod-{{ id }}";
+				var disqus_url = "http://inprod.net/games/{{ id }}";
+
+				// everything below here is Disqus's stuffs; just leave it alone
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+				// -->
+			</script>
+			<noscript>Please enable JavaScript to view the comments.</noscript>
+
+
+			<!-- social plug-in scripts -->
+			
+			<script type="text/javascript">
+				// Google+
+				(function() {
+					var po = document.createElement("script");
+					po.type = "text/javascript";
+					po.async = true;
+					po.src = "https://apis.google.com/js/plusone.js";
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				})();
+				
+				// Facebook
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=277171175636808";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+				
+				// Digg
+				(function() {
+					var s = document.createElement('script'), s1 = document.getElementsByTagName('script')[0];
+					s.type = 'text/javascript';
+					s.async = true;
+					s.src = 'http://widgets.digg.com/buttons.js';
+					s1.parentNode.insertBefore(s, s1);
+				})();
+				
+				// StumbleUpon
+				(function() {
+					var li = document.createElement("script");
+					li.type = "text/javascript";
+					li.async = true;
+					li.src = "https://platform.stumbleupon.com/1/widgets.js";
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(li, s);
+				})();
+			</script>
+			
+			<!-- Google Buzz -->
+			<!--<script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>-->
+			
+			<!-- Twitter -->
+			<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+			
+			<!-- Pinterest -->
+			<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="Lagrange" height="500">
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[
+			<script type="text/javascript">
+				function init() {
+					gadgets.window.adjustWidth();
+				}
+				gadgets.util.registerOnLoadHandler(init);
+			</script>
+			<applet code="http://inprod.net/games/lagrange/Lagrange.class" width="550" height="500px">
+				You must have the latest version of Java installed to play this game.
+			</applet>
+		]]> 
+	</Content>
+</Module>

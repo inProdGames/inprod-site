@@ -1,0 +1,359 @@
+		<script type="text/javascript">
+			var gamesTable;
+			
+			var nameHead;
+			var typeHead;
+			var topRow;
+			
+			// these are in order by date added
+			var ltdRow;
+			var smtrRow;
+			var icrRow;
+			var lagrangeRow;
+			var tpgRow;
+			var fastGameRow;
+			var icrplusRow;
+			var imdRow;
+			
+			function init() {
+				gamesTable = document.getElementById("gamesTable");
+				
+				nameHead = document.getElementById("nameHead");
+				typeHead = document.getElementById("typeHead");
+				statusHead = document.getElementById("statusHead");
+				topRow = document.getElementById("topRow");
+				
+				fastGameRow = document.getElementById("fastGameRow");
+				ltdRow = document.getElementById("ltdRow");
+				icrRow = document.getElementById("icrRow");
+				//icrplusRow = document.getElementById("icrplusRow");
+				imdRow = document.getElementById("imdRow");
+				lagrangeRow = document.getElementById("lagrangeRow");
+				tpgRow = document.getElementById("tpgRow");
+				smtrRow = document.getElementById("smtrRow");
+			}
+			function sortByName() {
+				/*nameHead.style.backgroundImage = 'none';
+				typeHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';
+				statusHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';*/
+				nameHead.className = "colHead active";
+				typeHead.className = "colHead";
+				statusHead.className = "colHead";
+				
+				gamesTable.innerHTML = "";
+				gamesTable.appendChild(topRow);
+				
+				gamesTable.appendChild(fastGameRow);
+				gamesTable.appendChild(icrRow);
+				//gamesTable.appendChild(icrplusRow);
+				gamesTable.appendChild(imdRow);
+				gamesTable.appendChild(lagrangeRow);
+				gamesTable.appendChild(ltdRow);
+				gamesTable.appendChild(smtrRow);
+				gamesTable.appendChild(tpgRow);
+			}
+			function sortByType() {
+				/*nameHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';
+				typeHead.style.backgroundImage = 'none';
+				statusHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';*/
+				nameHead.className = "colHead";
+				typeHead.className = "colHead active";
+				statusHead.className = "colHead";
+				
+				gamesTable.innerHTML = "";
+				gamesTable.appendChild(topRow);
+				
+				gamesTable.appendChild(fastGameRow);
+				gamesTable.appendChild(imdRow);
+				gamesTable.appendChild(ltdRow);
+				gamesTable.appendChild(smtrRow);
+				gamesTable.appendChild(tpgRow);
+				//gamesTable.appendChild(icrplusRow);
+				gamesTable.appendChild(icrRow);
+				gamesTable.appendChild(lagrangeRow);
+				
+			}
+			function sortByStatus() {
+				/*nameHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';
+				typeHead.style.backgroundImage = 'url("../imgs/gray_gradient.png")';
+				statusHead.style.backgroundImage = 'none';*/
+				nameHead.className = "colHead";
+				typeHead.className = "colHead";
+				statusHead.className = "colHead active";
+				
+				gamesTable.innerHTML = "";
+				gamesTable.appendChild(topRow);
+				
+				gamesTable.appendChild(icrRow);
+				gamesTable.appendChild(ltdRow);
+				gamesTable.appendChild(fastGameRow);
+				//gamesTable.appendChild(icrplusRow);
+				gamesTable.appendChild(imdRow);
+				gamesTable.appendChild(lagrangeRow);
+				gamesTable.appendChild(tpgRow);
+				gamesTable.appendChild(smtrRow);
+			}
+		</script>
+		<style type="text/css">
+			a.gamelink {
+				text-decoration:none;
+				color:black;
+			}
+			.gamelink:hover {
+				text-decoration:underline;
+				color:#808080;
+			}
+			.gamelink:active {
+				color:#404040;
+			}
+			
+			#gamesTable {
+				display:block;
+				text-align:center;
+				vertical-align:middle;
+				position:relative;
+				border-style:none;
+			}
+			th {
+				margin:0;
+				padding:2px;
+			}
+			td {
+				margin:0;
+				padding:8px;
+			}
+			tr {
+				border-bottom-style:solid;
+				border-bottom-color:black;
+				border-bottom-width:1px;
+			}
+			
+			.nameCol {
+				text-align:left;
+				vertical-align:top;
+			}
+			
+			#topRow {
+				border-bottom-style:none;
+			}
+			.colHead {
+				background-color:#B0B0B0;
+				background-image:-webkit-gradient(linear, left top, left bottom, from(#E0E0E0), to(#A0A0A0));
+				background-image:-webkit-linear-gradient(#E0E0E0, #A0A0A0);
+				background-image:   -moz-linear-gradient(#E0E0E0, #A0A0A0);
+				background-image:    -ms-linear-gradient(#E0E0E0, #A0A0A0);
+				background-image:     -o-linear-gradient(#E0E0E0, #A0A0A0);
+				background-image:        linear-gradient(#E0E0E0, #A0A0A0);
+				    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColor=#E0E0E0, endColor=#A0A0A0);
+				-ms-filter:"progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColor=#E0E0E0, endColor=#A0A0A0)";
+				cursor:pointer;
+			}
+			.active {
+				background-color:lightGray;
+				background-image:none;
+			}
+		</style>
+	</head>
+	<body onLoad="init();">
+		<div class="logo">
+			<img src="/public/images/logos/rounded_inprod_logo.png" style="border:0;" alt="Inverted Productions"/>
+			<p class="tagline">
+				Turning your gaming world upside-down
+			</p>
+		</div>
+		<header id="header">
+			<h1>
+				Productions
+			</h1>
+		</header>
+		<nav class="navbar">
+			<a href="/"        style="text-decoration:none;"><div class="navbtn"          id="homebtn">Home</div></a>
+			<a href="/news"   style="text-decoration:none;"><div class="navbtn"          id="newsbtn">News</div></a>
+			<a href="/games"  style="text-decoration:none;"><div class="navbtnCurrentPg" id="gamesbtn">Games</div></a>
+			<a href="/people" style="text-decoration:none;"><div class="navbtn"          id="peoplebtn">People</div></a>
+		</nav>
+		<div id="main">
+			<nav class="smalltext">
+				<a href="../index.html" class="smalltext">Inverted Productions</a> &gt; <b>Productions</b>
+			</nav>
+			<br/>
+			<table id="gamesTable" cellspacing="1" cellpadding="0">
+				<tr id="topRow">
+					<th></th>
+					<th id="nameHead" class="colHead active" onClick="sortByName()">
+						Name
+					</th>
+					<th id="typeHead" class="colHead" onClick="sortByType()">
+						Type
+					</th>
+					<th id="statusHead" class="colHead" onClick="sortByStatus()">
+						Status
+					</th>
+				</tr>
+				<tr id="fastGameRow">
+					<td>
+						<a class="gamelink" href="/games/fastgame">
+							<img src="/public/images/games/thumbs/fastgame_small.png"/>
+						</a>
+					</td>
+					<td class="nameCol">
+						<a class="gamelink" href="/games/fastgame">
+							<h2>The Fast Game</h2>
+							A fast-paced tile game
+						</a>
+					</td>
+					<td>
+						Flash
+						<br/>
+						<img src="/public/images/icons/flash.png"/>
+					</td>
+					<td style="color:blue;">
+						Beta
+					</td>
+				</tr>
+				<tr id="icrRow">
+					<td>
+						<a href="/games/icr" class="gamelink">
+							<img src="/public/images/games/thumbs/icr_small.png"/>
+						</a>
+					</td>
+					<td class="nameCol">
+						<a href="/games/icr" class="gamelink">
+							<h2>Inverse Cube Runner</h2>
+							<i>Cube Runner</i> from the other perspective
+						</a>
+					</td>
+					<td>
+						Java
+						<br/>
+						<img src="/public/images/icons/java.png"/>
+					</td>
+					<td style="color:green;">
+						&ldquo;Complete&rdquo;
+					</td>
+				</tr>
+<!--				<tr id="icrplusRow">
+					<td>
+						<a href="/games/icrplus" class="gamelink">
+							<br/>
+							<img src="/public/images/games/thumbs/icrplus_small.png"/>
+						</a>
+					</td>
+					<td class="nameCol">
+						<a href="/games/icrplus" class="gamelink">
+							<h2>Inverse Cube Runner Plus</h2>
+							<i>Cube Runner</i> from the other perspective - with new graphics and better browser support
+						</a>
+					</td>
+					<td>
+						HTML5
+						<br/>
+						<img src="/public/images/icons/html5.png"/>
+					</td>
+					<td style="color:blue;">
+						Beta
+					</td>
+				</tr> -->
+				<tr id="imdRow">
+					<td>
+						<a href="/games/imd" class="gamelink">
+							<br/>
+							<img src="/public/images/games/thumbs/imd_small.png"/>
+						</a>
+					</td>
+					<td class="nameCol">
+						<a href="/games/imd" class="gamelink">
+							<h2>Inverse Missile Defense</h2>
+							<i>Missile Defense</i> from the other perspective
+						</a>
+					</td>
+					<td>
+						Flash
+						<br/>
+						<img src="/public/images/icons/flash.png"/>
+					</td>
+					<td style="color:blue;">
+						Beta
+					</td>
+				</tr>
+				<tr id="lagrangeRow">
+					<td>
+						<a href="/games/lagrange" class="gamelink">
+							<img src="/public/images/games/thumbs/lagrange_small.png"/>
+						</a>
+					</td>
+					<td class="nameCol">
+						<a href="/games/lagrange" class="gamelink">
+							<h2>Lagrange</h2>
+							A fun physics shooter
+						</a>
+					</td>
+					<td>
+						Java
+						<br/>
+						<img src="/public/images/icons/java.png"/>
+					</td>
+
+
+					<td style="color:#404040;">
+						Alpha
+					</td>
+				</tr>
+				<tr id="ltdRow">
+					<td>
+						<a class="gamelink" href="/games/ltd">
+							<img src="/public/images/games/thumbs/ltd_small.png"/>
+						</a>
+					<td class="nameCol">
+						<a class="gamelink" href="/games/ltd">
+							<h2>Legitimate Tower Defense</h2>
+							A new way to look at tower defense
+						</a>
+					</td>
+					<td>
+						Flash
+						<br/>
+						<img src="/public/images/icons/flash.png"/>
+					</td>
+					<td style="color:green;">
+						&ldquo;Complete&rdquo;
+					</td>
+				</tr>
+				<tr id="smtrRow">
+					<td>
+						<a href="smtr">
+						</a>
+					</td>
+					<td class="nameCol">
+						<a href="/games/smtr" class="gamelink">
+							<h2>StickMan: The Reckoning</h2>
+						</a>
+					</td>
+					<td>
+						Flash
+						<br/>
+						<img src="/public/images/icons/flash.png"/>
+					</td>
+					<td style="color:darkred;">
+						Shelved
+					</td>
+				</tr>
+				<tr id="tpgRow">
+					<td>
+					</td>
+					<td class="nameCol">
+						<a href="/games/tpg" class="gamelink">
+							<h2>The Two-Player Game</h2>
+							A game for two players
+						</a>
+					</td>
+					<td class="typeCol">
+						Flash
+						<br/>
+						<img src="/public/images/icons/flash.png"/>
+					</td>
+					<td class="statusCol" style="color:darkred;">
+						Shelved
+					</td>
+				</tr>
+			</table>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<ModulePrefs title="The Two-Player Game" height="400">
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[
+			<script type="text/javascript">
+				function init() {
+					gadgets.window.adjustWidth();
+				}
+				gadgets.util.registerOnLoadHandler(init);
+			</script>
+			<embed src="http://inprod.net/games/smtr/smtr.swf" height="400px" width="550px" wmode="tranparent"/>
+		]]> 
+	</Content>
+</Module>

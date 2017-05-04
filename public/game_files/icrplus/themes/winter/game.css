@@ -1,0 +1,50 @@
+#field {
+	background-color:rgb(0,0,24);
+	background-image:url(stars.jpg);
+	-webkit-box-shadow:0px 0px 8px 4px rgb(0,0,24);
+	   -moz-box-shadow:0px 0px 8px 4px rgb(0,0,24);
+	        box-shadow:0px 0px 8px 4px rgb(0,0,24);
+	
+	position:fixed;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+#cubeArea {
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	height:48%;
+	
+	background-color:rgba(160,160,160,0.2);
+	border-style:solid;
+	border-width:3px;
+	border-color:rgba(0,0,255,0.7);
+	
+	visibility:hidden;
+}
+
+.flyer {
+	position:absolute;
+	
+/*	background-image:url(flyer.gif);
+	background-size:100% 100%;*/
+}
+
+.cube {
+	position:absolute;
+}
+.cubeColor0 {
+	background-image:url(flake1.png);
+	background-size:100% 100%;
+}
+.cubeColor1 {
+	background-image:url(flake2.png);
+	background-size:100% 100%;
+}
+.cubeColor2 {
+	background-image:url(flake3.png);
+	background-size:100% 100%;
+}

@@ -1,0 +1,42 @@
+#field {
+	position:fixed;
+	left:0%;
+	top:-120%;
+	width:100%;
+	height:100%;
+	padding:0px;
+	
+	/* WebKit (Safari, Chrome) */
+	-webkit-transition-property:top;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-timing-function:linear;
+	/* Gecko (FF, SeaMonkey) */
+	-moz-transition-property:top;
+	-moz-transition-duration:0.4s;
+	-moz-transition-timing-function:linear;
+	/* Presto (Opera) */
+	-o-transition-property:top;
+	-o-transition-duration:0.4s;
+	-o-transition-timing-function:linear;
+	/* QQ, no CSS3 transitions in Trident/IE */
+	transition-property:top;
+	transition-duration:0.4s;
+	transition-timing-function:linear;
+}
+#cubeArea {
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	height:48%;
+	
+	visibility:hidden;
+}
+
+.flyer {
+	position:absolute;
+}
+
+.cube {
+	position:absolute;
+}

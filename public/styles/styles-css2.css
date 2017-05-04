@@ -1,0 +1,205 @@
+/* tags */
+
+body {
+	background-color:#fefefe;
+	background-image:url("bgimg.gif");
+	background-repeat:repeat-x;
+	color:#030303;
+	font-family:Arial, Lucida Sans, MS Sans;
+	font-size:12pt;
+	font-weight:normal;
+	text-decoration:none;
+	border:0;
+}
+
+h1 {
+	color:#050505;
+	font-family:Arial, Arial Black;
+	font-size:36pt;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+}
+
+img {
+	border:0;
+}
+
+a {
+	color:#030303;
+	text-decoration:underline;
+}
+a:visited {
+	color:#030303;
+}
+a:hover {
+	color:#333333;
+}
+a:active {
+	color:#808080;
+}
+
+iframe {
+	border-style:none;
+	border-width:0px;
+}
+
+/* normal classes */
+
+.currentpg {
+	color:#030303;
+	font-size:12pt;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.mainpara {
+}
+
+.smalltext {
+	color:#030303;
+	font-size:8pt;
+	font-weight:normal;
+	text-decoration:none;
+}
+a.smalltext {
+	color:#030303;
+	text-decoration:underline;
+}
+a.smalltext:visited {
+	color:#030303;
+}
+
+a.smalltext:hover {
+	color:#333333;
+}
+a.smalltext:active {
+	color:#808080;
+}
+
+.game {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	
+	height:auto;
+}
+.share {
+	vertical-align:center;
+}
+td.share {
+	margin:8px;
+}
+.feedback {
+	border-left-style:solid;
+	border-left-width:1px;
+	border-left-color:lightgray;
+	
+	background-image:url("imgs/envelope.png");
+	background-repeat:no-repeat;
+	background-position:center 10px;
+	
+	text-align:center;
+}
+
+
+/* positioning classes */
+.logo {
+	position:absolute;
+	top:2px;
+	left:2px;
+	width:250px;
+	height:140px;
+	text-align:left;
+	vertical-align:middle;
+	z-index:50;
+	visibility:visible;
+}
+.tagline {
+	font-size:8pt;
+	
+	position:relative;
+	left:3px;
+	top:-5px;
+}
+
+.header {
+	position:absolute;
+	top:30px;
+	left:202px;
+	width:748px;
+	text-align:center;
+	vertical-align:middle;
+	z-index:50;
+	visibility:visible;
+}
+
+.navbar {
+	position:absolute;
+	top:-1px;
+	left:205px;
+	text-align:left;
+	z-index:50;
+	visibility:visible;
+}
+
+#main {
+	position:absolute;
+	top:145px;
+	left:230px;
+	right:0px;
+	max-width:749px;
+	text-align:left;
+	vertical-align:top;
+	z-index:50;
+	visibility:visible;
+}
+.tm {
+	color:#030303;
+	font-size:6pt;
+	
+	position:relative;
+	left:-5px;
+}
+
+/* navbtns */
+#homebtn {
+	border:0;
+	position:absolute;
+	top:-1px;
+	left:0px;
+	text-align:left;
+	visibility:visible;
+}
+#newsbtn {
+	border:0;
+	position:absolute;
+	top:-1px;
+	left:148px;
+	text-align:left;
+	visibility:visible;
+}
+#gamesbtn {
+	border:0;
+	position:absolute;
+	top:-1px;
+	left:296px;
+	text-align:left;
+	visibility:visible;
+}
+#peoplebtn {
+	border:0;
+	position:absolute;
+	top:-1px;
+	left:444px;
+	text-align:left;
+	visibility:visible;
+}
+#contactbtn {
+	border:0;
+	position:absolute;
+	top:-1px;
+	left:592px;
+	text-align:left;
+	visibility:visible;
+}
