@@ -23,14 +23,14 @@
 			</nav>
 			<br/>
 			<p>
-				{{ description }}
+				{{ description|safe }}
 			</p>
 			<center>
 				<img src="/public/images/games/thumbs/{{ id }}.png" style="display:none;" alt="{{ title }}" />
 				{{ embedCode|safe }}
 				{% if releaseDate %}
 					<br />
-					Release date: {{ releaseDate }}
+					Release date: {{ releaseDate|safe }}
 				{% endif %}
 				{% if version %}
 					<br />
@@ -43,7 +43,7 @@
 			</center>
 			<br/>
 			<br/>
-			{{ credits }}
+			{{ credits|safe }}
 			<br/>
 			<br/>
 			{% if changelog %}
